@@ -9,14 +9,14 @@ const botTypeClasses = {
     Captain: "icon star",
 };
 
-function BotCard({ bot, id, handleDelete }) {
+function BotCard({ bot, id, handleDelete, handleAdd }) {
     return ( <
         div className = "ui column" >
         <
         div className = "ui card"
         key = { bot.id }
         onClick = {
-            () => console.log("add code to connect event listener")
+            () => handleAdd(id)
         } >
         <
         div className = "image" >

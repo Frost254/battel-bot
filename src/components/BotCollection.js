@@ -5,13 +5,14 @@ function BotCollection({ bots }) {
     // Your code here
     const [botsUpdated, setbotsUpdated] = useState({ bots })
 
-    function HandleDelete(id) {
+    function HandleAdd(id) {
+        console.log("works")
         console.log(id)
-        console.log(botsUpdated)
+    }
 
-        const newList = bots.filter((item) => item.id !== id);
+    function HandleDelete(id) {
 
-        setbotsUpdated(newList);
+        setbotsUpdated(bots.filter((item) => item.id !== id));
         console.log(botsUpdated)
         fetch(`http://localhost:8002/bots/${id}`, {
                 method: "DELETE",
@@ -29,6 +30,7 @@ function BotCollection({ bots }) {
                 id = { bot.id }
                 bot = { bot }
                 handleDelete = { HandleDelete }
+                handleAdd = { HandleAdd }
                 />
             ))
         }
