@@ -10,11 +10,11 @@ function BotCollection({ bots, handleAdd }) {
 
         setbotsUpdated(bots.filter((item) => item.id !== id));
         console.log(botsUpdated)
-            // fetch(`http://localhost:8002/bots/${id}`, {
-            //         method: "DELETE",
-            //     })
-            //     .then((r) => r.json())
-            //     .then(() => console.log("deleted!"));
+        fetch(`http://localhost:8002/bots/${id}`, {
+                method: "DELETE",
+            })
+            .then((r) => r.json())
+            .then(() => console.log("deleted!"));
     }
 
     return ( <
