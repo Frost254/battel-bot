@@ -9,7 +9,15 @@ function YourBotArmy({ bots }) {
         <
         div className = "ui five column grid" >
         <
-        div className = "row bot-army-row" > {}
+        div className = "row bot-army-row" > {
+            bots.map(bot => ( <
+                BotCard key = { bot.id }
+                id = { bot.id }
+                bot = { bot }
+
+                />
+            ))
+        }
         Your Bot Army <
         /div> < /
         div > <
