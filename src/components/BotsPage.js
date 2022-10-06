@@ -5,6 +5,13 @@ import BotCollection from "./BotCollection";
 function BotsPage() {
     //start here with your code for step one
     const [bots, setBots] = useState([]);
+    const [botsToPush, setbotsToPush] = useState({ bots })
+
+    function HandleAdd(id) {
+        setbotsToPush(bots.filter((item) => item.id === id))
+        console.log(botsToPush)
+        console.log("Works")
+    }
 
     useEffect(() => {
         fetch("http://localhost:8002/bots")
@@ -17,9 +24,10 @@ function BotsPage() {
     return ( <
         div >
         <
-        YourBotArmy bots = { bots }
+        YourBotArmy bots = { botsToPush }
         / > <
         BotCollection bots = { bots }
+        handleAdd = { HandleAdd }
         / > < /
         div >
     )
