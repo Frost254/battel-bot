@@ -10,6 +10,7 @@ function BotsPage() {
     function HandleAdd(id) {
         setbotsToPush(bots.filter((item) => item.id === id))
         console.log("Works")
+        console.log(botsToPush)
     }
 
 
@@ -19,7 +20,6 @@ function BotsPage() {
             .then((items) => setBots(items));
     }, []);
 
-    console.log(bots)
 
     return ( 
     <div>
