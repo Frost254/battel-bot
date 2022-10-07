@@ -5,7 +5,7 @@ import BotCollection from "./BotCollection";
 function BotsPage() {
     //start here with your code for step one
     const [bots, setBots] = useState([]);
-    const [botsToPush, setbotsToPush] = useState({ bots })
+    const [botsToPush, setbotsToPush] = useState([bots])
 
     function HandleAdd(id) {
         setbotsToPush(bots.filter((item) => item.id === id))
