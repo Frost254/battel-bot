@@ -4,24 +4,16 @@ import BotCard from "./BotCard";
 function YourBotArmy({ bots }) {
     //your bot army code here...
 
-    return ( <
-        div className = "ui segment inverted olive bot-army" >
-        <
-        div className = "ui five column grid" >
-        <
-        div className = "row bot-army-row" > {
-            bots.map(bot => ( <
-                BotCard key = { bot.id }
-                id = { bot.id }
-                bot = { bot }
+    return ( 
+    <div className = "ui segment inverted olive bot-army" >
 
-                />
-            ))
-        }
-        Your Bot Army <
-        /div> < /
-        div > <
-        /div>
+        <div className = "ui five column grid">
+
+            <div className = "row bot-army-row"> {}Your Bot Army </div>   
+            
+        </div>  
+
+    </div>
     );
 }
 

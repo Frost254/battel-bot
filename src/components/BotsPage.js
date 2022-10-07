@@ -6,23 +6,12 @@ function BotsPage() {
     //start here with your code for step one
     const [bots, setBots] = useState([]);
     const [botsToPush, setbotsToPush] = useState({ bots })
-    const [botsUpdated, setbotsUpdated] = useState({ bots })
 
     function HandleAdd(id) {
         setbotsToPush(bots.filter((item) => item.id === id))
         console.log("Works")
     }
 
-    function HandleDelete(id) {
-
-        setbotsUpdated(bots.filter((item) => item.id !== id));
-        console.log(botsUpdated)
-            // fetch(`http://localhost:8002/bots/${id}`, {
-            //         method: "DELETE",
-            //     })
-            //     .then((r) => r.json())
-            //     .then(() => console.log("deleted!"));
-    }
 
     useEffect(() => {
         fetch("http://localhost:8002/bots")
@@ -32,16 +21,12 @@ function BotsPage() {
 
     console.log(bots)
 
-    return ( <
-        div >
-        <
-        YourBotArmy bots = { botsToPush }
-        / > <
-        BotCollection bots = { bots }
-        handleAdd = { HandleAdd }
-        handleDelete = { HandleDelete }
-        / > < /
-        div >
+    return ( 
+    <div>
+        <YourBotArmy bots = { botsToPush }/> 
+        <BotCollection bots = { bots }
+        handleAdd = { HandleAdd }/> 
+        </div>
     )
 }
 
